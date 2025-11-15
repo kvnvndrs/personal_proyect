@@ -1,6 +1,6 @@
 # Portafolio web
 
-  Este repo contiene una plantilla para que hagas tu portafolio web :D es una web pensada para mostrar proyectos, habilidades y la manera en que te gusta trabajar.
+  Este repo contiene una plantilla para que hagas tu portafolio web :D está pensada para mostrar proyectos, habilidades y la manera en que te gusta trabajar.
 
 ## Tecnologías
 
