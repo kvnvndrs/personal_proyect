@@ -1,0 +1,334 @@
+---
+import Icon from './Icon.astro';
+---
+
+<div class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
+  <div class="max-w-7xl mx-auto w-full">
+    <div class="text-center mb-16 scroll-reveal">
+      <span class="text-cyan-400 text-sm tracking-wider uppercase">Tecnologías</span>
+      <h2 class="mt-4 text-4xl sm:text-5xl text-white">
+        Stack <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">tecnológico</span>
+      </h2>
+      <p class="mt-4 text-xl text-slate-400 max-w-3xl mx-auto">
+        Herramientas y tecnologías especializadas en seguridad y DevSecOps
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="tech-card group">
+        <div class="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500"></div>
+        <div class="relative h-full p-6 bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 rounded-2xl">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
+              <Icon name="shield" class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-xl text-white">Seguridad</h3>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">OWASP</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="lock" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Vault</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="eye" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Snyk</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="activity" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">SonarQube</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="terminal" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Nmap</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Burp Suite</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-card group">
+        <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500"></div>
+        <div class="relative h-full p-6 bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 rounded-2xl">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+              <Icon name="gitBranch" class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-xl text-white">DevSecOps</h3>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="gitBranch" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Jenkins</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="gitBranch" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">GitLab CI</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="gitBranch" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">GitHub Actions</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="code" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Terraform</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="server" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Ansible</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="gitBranch" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">ArgoCD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-card group">
+        <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500"></div>
+        <div class="relative h-full p-6 bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 rounded-2xl">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+              <Icon name="cloud" class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-xl text-white">Cloud & Containers</h3>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="cloud" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">AWS</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="cloud" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Azure</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="container" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Docker</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="layers" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Kubernetes</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="layers" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Istio</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="container" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Helm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-card group">
+        <div class="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-red-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500"></div>
+        <div class="relative h-full p-6 bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 rounded-2xl">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-red-500 rounded-lg flex items-center justify-center">
+              <Icon name="activity" class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-xl text-white">Monitoring & SIEM</h3>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="activity" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">ELK Stack</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="activity" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Splunk</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="activity" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Prometheus</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="activity" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Grafana</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="activity" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Datadog</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="eye" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Wazuh</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-card group">
+        <div class="absolute -inset-0.5 bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500"></div>
+        <div class="relative h-full p-6 bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 rounded-2xl">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center">
+              <Icon name="database" class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-xl text-white">Bases de Datos</h3>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="database" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">PostgreSQL</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="database" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">MongoDB</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="database" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Redis</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="database" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Elasticsearch</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="database" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">DynamoDB</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="database" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">MySQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-card group">
+        <div class="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500"></div>
+        <div class="relative h-full p-6 bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 rounded-2xl">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-lg flex items-center justify-center">
+              <Icon name="code" class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-xl text-white">Lenguajes</h3>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="code" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Python</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="code" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Go</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="terminal" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Bash</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="code" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">JavaScript</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="code" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">TypeScript</span>
+            </div>
+            <div class="tech-item flex items-center gap-2 p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg hover:border-cyan-400/50 transition-all">
+              <Icon name="code" class="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span class="text-sm text-slate-300">Java</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 scroll-reveal">
+      <h3 class="text-2xl text-white text-center mb-8">Certificaciones</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {['CISSP', 'CEH', 'AWS Security', 'Kubernetes CKS'].map((cert) => (
+          <div class="cert-card p-4 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-xl text-center hover:border-cyan-400/50 transition-all cursor-pointer">
+            <Icon name="shield" class="w-8 h-8 text-cyan-400 mx-auto mb-2" />
+            <span class="text-sm text-slate-300">{cert}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scroll-reveal {
+    animation: scrollReveal 0.8s ease-out;
+  }
+
+  @keyframes scrollReveal {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .tech-card {
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .tech-card:nth-child(1) { animation-delay: 0s; }
+  .tech-card:nth-child(2) { animation-delay: 0.1s; }
+  .tech-card:nth-child(3) { animation-delay: 0.2s; }
+  .tech-card:nth-child(4) { animation-delay: 0.3s; }
+  .tech-card:nth-child(5) { animation-delay: 0.4s; }
+  .tech-card:nth-child(6) { animation-delay: 0.5s; }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .tech-item {
+    cursor: pointer;
+  }
+
+  .tech-item:hover {
+    transform: scale(1.05) translateY(-2px);
+  }
+
+  .cert-card {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .cert-card:nth-child(1) { animation-delay: 0s; }
+  .cert-card:nth-child(2) { animation-delay: 0.1s; }
+  .cert-card:nth-child(3) { animation-delay: 0.2s; }
+  .cert-card:nth-child(4) { animation-delay: 0.3s; }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .cert-card:hover {
+    transform: scale(1.05);
+  }
+</style>
+

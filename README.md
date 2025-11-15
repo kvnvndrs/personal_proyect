@@ -1,41 +1,56 @@
+# Portafolio web
 
-  # Portafolio web — Proyecto personal
+  Este repo contiene una plantilla para que hagas tu portafolio web :D es una web pensada para mostrar proyectos, habilidades y la manera en que te gusta trabajar.
 
-  Este repo contiene la versión en código de mi portafolio personal. Es una web pensada para mostrar proyectos, habilidades y la manera en que me gusta trabajar.
+## Tecnologías
 
-  Qué hay en este repo
-  - Código fuente de la web: componentes en `src/` (Astro + React + TypeScript) y plantillas.
-  - Una colección de componentes UI reutilizables en `src/components` y `src/ui`.
-  - Archivos de configuración para Vite y TypeScript.
+- **Astro** - Framework rápido
+- **Tailwind CSS** - Framework amigable de estilos
+- **TypeScript** - Tipado estático para JavaScript
+- **Lucide Icons** - Iconos bonitos
 
-  Arrancar rápido (lo mínimo para ver la web)
-  1. Instala dependencias:
+## Qué hay en este repo
 
-  ```powershell
-  npm install
-  ```
+- Código fuente de la web: componentes en `src/` (Astro + Tailwind CSS)
+- Componentes reutilizables en `src/components/`
+- Layouts en `src/layouts/`
+- Páginas en `src/pages/`
+- Estilos globales en `src/styles/`
 
-  2. Levanta el servidor de desarrollo:
+## Cómo usarla
 
-  ```powershell
-  npm run dev
-  ```
+1. Instala dependencias:
 
-  3. Para generar una versión lista para producción:
+```powershell
+npm install
+```
 
-  ```powershell
-  npm run build
-  npm run preview
-  ```
+2. Levanta el servidor:
 
-  Dónde tocar si quieres hacer cambios
-  - Modifica las páginas y componentes en `src/`.
-  - Los componentes comunes están en `src/ui/` y `src/components/`.
-  - Si cambias estilos globales revisa `src/index.css` o `src/styles/globals.css` (en una oportunidad que tenga lo cambiaré a Tailwind).
+```powershell
+npm run dev
+```
 
-  Notas rápidas
-  - El proyecto usa Vite y TypeScript; si no estás familiarizado con ellos, puedes usar `npm run dev` para empezar.
-  - Si vas a probar cambios grandes, crea una rama y prueba en local antes de hacer merge.
+3. Para generar una versión lista para producción:
 
-  Créditos
-  - Cristiano Ronaldo SIUUUUU
+```powershell
+npm run build
+npm run preview
+```
+
+## Dónde tocar si quieres hacer cambios
+
+- Modifica las páginas en `src/pages/`
+- Los componentes están en `src/components/`
+- Estilos globales en `src/styles/globals.css`
+- Configuración de Tailwind en `tailwind.config.mjs`
+
+# Futuras implementaciones
+
+- Optimizar todo al máximo para aprovechar el potencial de Astro (si, soy un AstroKid)
+- Generalizar el concepto de el portafolio (actualmente solo está enfocado a la seguridad de datos)
+- Explorar animaciones, paleta de colores y componentes ligeros
+
+## Créditos
+
+- Cristiano Ronaldo SIUUUUU
