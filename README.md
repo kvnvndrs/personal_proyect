@@ -34,7 +34,7 @@
   - Si cambias estilos globales revisa `src/index.css` o `src/styles/globals.css` (en una oportunidad que tenga lo cambiaré a Tailwind).
 
   Notas rápidas
-  - El proyecto usa Vite y TypeScript; si no estás familiarizado con ellos, `npm run dev` es el mejor lugar para empezar.
+  - El proyecto usa Vite y TypeScript; si no estás familiarizado con ellos, puedes usar `npm run dev` para empezar.
   - Si vas a probar cambios grandes, crea una rama y prueba en local antes de hacer merge.
 
   Créditos
