@@ -1,0 +1,195 @@
+---
+import { Shield, Lock, Terminal, Github, Linkedin, Mail } from 'lucide-react';
+---
+
+<div class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
+  <div class="max-w-7xl mx-auto w-full">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Content -->
+      <div class="space-y-6 fade-in">
+        <div class="inline-block">
+          <span class="px-4 py-2 bg-cyan-400/10 border border-cyan-400/20 rounded-full text-cyan-400 text-sm">
+            Seguridad de Datos • DevSecOps
+          </span>
+        </div>
+
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl text-white">
+          Protegiendo el{' '}
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+            futuro digital
+          </span>
+        </h1>
+
+        <p class="text-xl text-slate-400">
+          Ingeniero especializado en seguridad de datos y prácticas DevSecOps, 
+          construyendo sistemas seguros y resilientes desde el código hasta la producción.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="#proyectos"
+            class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white hover:shadow-lg hover:shadow-cyan-500/50 transition-all hover:scale-105"
+          >
+            Ver Proyectos
+          </a>
+          <a
+            href="#acerca"
+            class="px-8 py-3 border border-slate-700 rounded-lg text-slate-300 hover:border-cyan-400 hover:text-cyan-400 transition-all hover:scale-105"
+          >
+            Conocer más
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex gap-4 pt-4">
+          <a
+            href="#"
+            class="w-12 h-12 rounded-lg bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400 transition-all hover:scale-110 hover:-translate-y-1"
+          >
+            <Github className="w-5 h-5" />
+          </a>
+          <a
+            href="#"
+            class="w-12 h-12 rounded-lg bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400 transition-all hover:scale-110 hover:-translate-y-1"
+          >
+            <Linkedin className="w-5 h-5" />
+          </a>
+          <a
+            href="#contacto"
+            class="w-12 h-12 rounded-lg bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400 transition-all hover:scale-110 hover:-translate-y-1"
+          >
+            <Mail className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Animated Visual -->
+      <div class="relative hidden lg:block fade-in">
+        <div class="relative w-full h-[500px] flex items-center justify-center">
+          <!-- Center Shield -->
+          <div class="rotating-element">
+            <div class="w-48 h-48 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center shadow-2xl shadow-cyan-500/50">
+              <Shield className="w-24 h-24 text-white" />
+            </div>
+          </div>
+
+          <!-- Floating Icons -->
+          <div class="floating-icon absolute" style="top: 30%; left: 20%;">
+            <div class="w-16 h-16 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl flex items-center justify-center">
+              <Shield className="w-8 h-8 text-cyan-400" />
+            </div>
+          </div>
+          
+          <div class="floating-icon-delayed absolute" style="top: 20%; right: 20%;">
+            <div class="w-16 h-16 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl flex items-center justify-center">
+              <Lock className="w-8 h-8 text-cyan-400" />
+            </div>
+          </div>
+          
+          <div class="floating-icon-delayed-2 absolute" style="bottom: 30%; left: 15%;">
+            <div class="w-16 h-16 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl flex items-center justify-center">
+              <Terminal className="w-8 h-8 text-cyan-400" />
+            </div>
+          </div>
+
+          <!-- Orbiting rings -->
+          <div class="orbit-ring absolute" style="width: 300px; height: 300px;"></div>
+          <div class="orbit-ring-2 absolute" style="width: 360px; height: 360px;"></div>
+          <div class="orbit-ring-3 absolute" style="width: 420px; height: 420px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .rotating-element {
+    animation: rotate3d 20s linear infinite;
+  }
+
+  @keyframes rotate3d {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+
+  .floating-icon {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .floating-icon-delayed {
+    animation: float 3s ease-in-out 0.5s infinite;
+  }
+
+  .floating-icon-delayed-2 {
+    animation: float 3s ease-in-out 1s infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px);
+      opacity: 1;
+    }
+  }
+
+  .orbit-ring,
+  .orbit-ring-2,
+  .orbit-ring-3 {
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 50%;
+    margin: auto;
+    inset: 0;
+  }
+
+  .orbit-ring {
+    animation: orbitRotate 20s linear infinite, pulse 3s ease-in-out infinite;
+  }
+
+  .orbit-ring-2 {
+    animation: orbitRotate 25s linear infinite, pulse 3s ease-in-out 1s infinite;
+  }
+
+  .orbit-ring-3 {
+    animation: orbitRotate 30s linear infinite, pulse 3s ease-in-out 2s infinite;
+  }
+
+  @keyframes orbitRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+</style>

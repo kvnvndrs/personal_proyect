@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
+import Technologies from '../components/Technologies.astro';
+import Contact from '../components/Contact.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout title="Portfolio - Ingeniero DevSecOps">
+  <Navigation />
+  
+  <main>
+    <section id="inicio">
+      <Hero />
+    </section>
+    
+    <section id="acerca">
+      <About />
+    </section>
+    
+    <section id="proyectos">
+      <Projects />
+    </section>
+    
+    <section id="tecnologias">
+      <Technologies />
+    </section>
+
+    <section id="contacto">
+      <Contact />
+    </section>
+  </main>
+
+  <!-- Decorative background elements -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+  </div>
+</Layout>
