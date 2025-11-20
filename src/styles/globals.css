@@ -32,7 +32,7 @@
   }
 }
 
-/* Custom Scrollbar */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -45,7 +45,7 @@
   @apply bg-cyber-slate rounded-full hover:bg-cyber-secondary/50 transition-colors;
 }
 
-/* Selection */
+
 ::selection {
   @apply bg-cyber-secondary/30 text-cyber-secondary;
 }
