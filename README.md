@@ -1,6 +1,7 @@
 # Portafolio web
 
 Este proyecto lo hice con el fin de que puedas adaptar tu CV a un formato web :D
+Puedes verlo aquí: https://cocorillaportfolio.netlify.app/
 
 ## Tecnologías
 
