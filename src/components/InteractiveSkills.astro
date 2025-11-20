@@ -4,22 +4,26 @@ const skillCategories = [
     id: "lenguajes",
     name: "Lenguajes",
     color: "blue",
-    skills: ["Python", "Java", "C/C++"],
+    skills: [
+      { name: "Python", icon: "python" },
+      { name: "Java", icon: "openjdk" },
+      { name: "C/C++", icon: "cplusplus" },
+    ],
   },
   {
     id: "web",
     name: "Desarrollo Web",
     color: "purple",
     skills: [
-      "NextJS",
-      "Angular",
-      "HTML5",
-      "Tailwind",
-      ".NET",
-      "C#",
-      "JavaScript",
-      "PHP",
-      "♥Astro♥",
+      { name: "NextJS", icon: "nextdotjs" },
+      { name: "Angular", icon: "angular" },
+      { name: "HTML5", icon: "html5" },
+      { name: "Tailwind", icon: "tailwindcss" },
+      { name: ".NET", icon: "dotnet" },
+      { name: "C#", icon: "C" },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "PHP", icon: "php" },
+      { name: "Astro", icon: "astro" },
     ],
   },
   {
@@ -27,32 +31,34 @@ const skillCategories = [
     name: "Herramientas & DevOps",
     color: "green",
     skills: [
-      "TensorFlow",
-      "Keras",
-      "NumPy",
-      "Pandas",
-      "Scikit-learn",
-      "Deep Learning",
-      "Computer Vision",
-      "Linux",
-      "Bash",
-      "SQL",
-      "MySQL",
-      "Git",
-      "GitHub",
-      "Splunk",
-      "Chronicle",
-      "Wireshark",
-      "NIST Framework",
-      "Network Security",
-      "Windows",
+      { name: "TensorFlow", icon: "tensorflow" },
+      { name: "Keras", icon: "keras" },
+      { name: "NumPy", icon: "numpy" },
+      { name: "Pandas", icon: "pandas" },
+      { name: "Scikit-learn", icon: "scikitlearn" },
+      { name: "Deep Learning", icon: "openai" },
+      { name: "Computer Vision", icon: "opencv" },
+      { name: "Linux", icon: "linux" },
+      { name: "Bash", icon: "gnubash" },
+      { name: "SQL", icon: "postgresql" },
+      { name: "MySQL", icon: "mysql" },
+      { name: "Git", icon: "git" },
+      { name: "GitHub", icon: "github" },
+      { name: "Splunk", icon: "splunk" },
+      { name: "Chronicle", icon: "googlecloud" },
+      { name: "Wireshark", icon: "wireshark" },
+      { name: "NIST Framework", icon: "securityscorecard" },
+      { name: "Network Security", icon: "kalilinux" },
     ],
   },
   {
     id: "idiomas",
     name: "Idiomas",
     color: "gray",
-    skills: ["Español (Nativo)", "Inglés (Técnico A2/B1)"],
+    skills: [
+      { name: "Español (Nativo)", icon: "googletranslate" },
+      { name: "Inglés (Técnico A2/B1)", icon: "googletranslate" },
+    ],
   },
 ];
 ---
@@ -92,11 +98,14 @@ const skillCategories = [
             />
 
             <div class="relative z-10 flex flex-col items-center text-center gap-2">
-              <div
-                class={`w-2 h-2 rounded-full bg-${cat.color}-500 shadow-[0_0_10px_rgba(var(--color-${cat.color}),0.5)]`}
+              <img
+                src={`https://cdn.simpleicons.org/${skill.icon}/${cat.color === "white" ? "000" : "fff"}`}
+                alt={skill.name}
+                class="w-8 h-8 transition-transform duration-300 group-hover:scale-110"
+                loading="lazy"
               />
               <span class="text-sm font-medium text-gray-200 group-hover:text-white transition-colors">
-                {skill}
+                {skill.name}
               </span>
             </div>
           </div>
