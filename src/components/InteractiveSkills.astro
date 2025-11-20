@@ -1,0 +1,153 @@
+---
+const skillCategories = [
+  {
+    id: "lenguajes",
+    name: "Lenguajes",
+    color: "blue",
+    skills: ["Python", "Java", "C/C++"],
+  },
+  {
+    id: "web",
+    name: "Desarrollo Web",
+    color: "purple",
+    skills: [
+      "NextJS",
+      "Angular",
+      "HTML5",
+      "Tailwind",
+      ".NET",
+      "C#",
+      "JavaScript",
+      "PHP",
+      "♥Astro♥",
+    ],
+  },
+  {
+    id: "devops",
+    name: "Herramientas & DevOps",
+    color: "green",
+    skills: [
+      "TensorFlow",
+      "Keras",
+      "NumPy",
+      "Pandas",
+      "Scikit-learn",
+      "Deep Learning",
+      "Computer Vision",
+      "Linux",
+      "Bash",
+      "SQL",
+      "MySQL",
+      "Git",
+      "GitHub",
+      "Splunk",
+      "Chronicle",
+      "Wireshark",
+      "NIST Framework",
+      "Network Security",
+      "Windows",
+    ],
+  },
+  {
+    id: "idiomas",
+    name: "Idiomas",
+    color: "gray",
+    skills: ["Español (Nativo)", "Inglés (Técnico A2/B1)"],
+  },
+];
+---
+
+<div class="interactive-skills-container">
+  <div class="flex flex-wrap justify-center gap-4 mb-8">
+    <button
+      class="filter-btn px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 text-sm font-medium active"
+      data-filter="all"
+    >
+      Todos
+    </button>
+    {
+      skillCategories.map((cat) => (
+        <button
+          class={`filter-btn px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-${cat.color}-500/20 hover:border-${cat.color}-500/50 transition-all duration-300 text-sm font-medium`}
+          data-filter={cat.id}
+          data-color={cat.color}
+        >
+          {cat.name}
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="skills-grid">
+    {
+      skillCategories.flatMap((cat) =>
+        cat.skills.map((skill) => (
+          <div
+            class={`skill-card group relative p-4 rounded-xl border border-white/10 bg-black/40 backdrop-blur-sm hover:scale-105 transition-all duration-300 cursor-default overflow-hidden`}
+            data-category={cat.id}
+            data-color={cat.color}
+          >
+            <div
+              class={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-${cat.color}-500`}
+            />
+
+            <div class="relative z-10 flex flex-col items-center text-center gap-2">
+              <div
+                class={`w-2 h-2 rounded-full bg-${cat.color}-500 shadow-[0_0_10px_rgba(var(--color-${cat.color}),0.5)]`}
+              />
+              <span class="text-sm font-medium text-gray-200 group-hover:text-white transition-colors">
+                {skill}
+              </span>
+            </div>
+          </div>
+        )),
+      )
+    }
+  </div>
+</div>
+
+<script>
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const skillCards = document.querySelectorAll(".skill-card");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach((b) => {
+        b.classList.remove("active", "bg-white/20", "scale-105");
+        b.classList.add("bg-white/5");
+      });
+      btn.classList.add("active", "bg-white/20", "scale-105");
+      btn.classList.remove("bg-white/5");
+
+      const filter = btn.getAttribute("data-filter");
+
+      skillCards.forEach((card) => {
+        const cardCat = card.getAttribute("data-category");
+        const htmlCard = card as HTMLElement;
+
+        if (filter === "all" || filter === cardCat) {
+          htmlCard.style.display = "flex";
+          htmlCard.animate(
+            [
+              { transform: "scale(0.9)", opacity: 0 },
+              { transform: "scale(1)", opacity: 1 },
+            ],
+            {
+              duration: 300,
+              easing: "ease-out",
+            },
+          );
+        } else {
+          htmlCard.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .filter-btn.active {
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  }
+</style>

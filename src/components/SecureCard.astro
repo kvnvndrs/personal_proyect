@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tags?: string[];
+  link?: string;
+}
+
+const { title, description, tags = [], link = "#" } = Astro.props;
+---
+
+<div class="group relative border border-cyber-primary/30 bg-cyber-dark/50 p-6 hover:border-cyber-primary transition-colors duration-300 overflow-hidden">
+  <!-- Corner accents -->
+  <div class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-cyber-primary opacity-50 group-hover:opacity-100 transition-opacity"></div>
+  <div class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-cyber-primary opacity-50 group-hover:opacity-100 transition-opacity"></div>
+  <div class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-cyber-primary opacity-50 group-hover:opacity-100 transition-opacity"></div>
+  <div class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-cyber-primary opacity-50 group-hover:opacity-100 transition-opacity"></div>
+
+  <!-- Content -->
+  <div class="relative z-10">
+    <h3 class="text-xl font-bold mb-2 text-cyber-secondary group-hover:text-cyber-primary transition-colors">
+      <span class="mr-2 text-cyber-accent opacity-0 group-hover:opacity-100 transition-opacity">></span>
+      {title}
+    </h3>
+    
+    <div class="relative overflow-hidden mb-4">
+      <p class="text-gray-400 group-hover:text-gray-300 transition-colors blur-[2px] group-hover:blur-0 duration-500 select-none group-hover:select-auto">
+        {description}
+      </p>
+      <div class="absolute inset-0 bg-cyber-dark/90 flex items-center justify-center group-hover:opacity-0 transition-opacity duration-500 pointer-events-none">
+        <span class="text-xs text-cyber-primary/50 animate-pulse">[ENCRYPTED_DATA]</span>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mb-4">
+      {tags.map((tag) => (
+        <span class="text-xs border border-cyber-primary/30 px-2 py-1 text-cyber-primary/70 group-hover:border-cyber-primary group-hover:text-cyber-primary transition-all">
+          {tag}
+        </span>
+      ))}
+    </div>
+
+    <a href={link} class="inline-block text-sm text-cyber-secondary hover:text-cyber-accent transition-colors opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 duration-300">
+      ACCESS_FILE >>
+    </a>
+  </div>
+
+  <!-- Scanline effect on hover -->
+  <div class="absolute inset-0 bg-cyber-primary/5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 pointer-events-none"></div>
+</div>

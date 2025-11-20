@@ -4,10 +4,48 @@
 
 @layer base {
   * {
-    @apply border-slate-700;
+    @apply border-cyber-slate;
   }
 
   body {
-    @apply bg-slate-950 text-slate-100;
+    @apply bg-cyber-dark text-slate-200 font-sans overflow-x-hidden;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-mono;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  }
+  
+  .border-glow {
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+  }
+
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cyber-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyber-slate rounded-full hover:bg-cyber-secondary/50 transition-colors;
+}
+
+/* Selection */
+::selection {
+  @apply bg-cyber-secondary/30 text-cyber-secondary;
 }

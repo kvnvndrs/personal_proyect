@@ -5,155 +5,116 @@ import Icon from './Icon.astro';
 <div class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
   <div class="max-w-7xl mx-auto w-full">
     <div class="text-center mb-16 scroll-reveal">
-      <span class="text-cyan-400 text-sm tracking-wider uppercase">Contacto</span>
-      <h2 class="mt-4 text-4xl sm:text-5xl text-white">
-        Trabajemos <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">juntos</span>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyber-secondary/30 bg-cyber-secondary/5 text-cyber-secondary text-xs font-mono mb-4">
+        <span>// SECURE_UPLINK</span>
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-bold text-white">
+        Iniciar <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-primary to-cyber-secondary">Conexión</span>
       </h2>
-      <p class="mt-4 text-xl text-slate-400 max-w-3xl mx-auto">
-        ¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte a asegurar tu infraestructura
-      </p>
     </div>
 
     <div class="grid lg:grid-cols-3 gap-8">
       <div class="lg:col-span-1 space-y-6">
-        <div class="contact-card p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-xl hover:border-cyan-400/50 transition-all group">
-          <div class="w-12 h-12 bg-cyan-400/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyan-400/20 transition-colors">
-            <Icon name="mail" class="w-6 h-6 text-cyan-400" />
+        <div class="contact-card p-6 bg-cyber-gray/50 border border-cyber-slate rounded-lg hover:border-cyber-primary/50 transition-all group">
+          <div class="w-12 h-12 bg-cyber-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyber-primary/20 transition-colors">
+            <Icon name="mail" class="w-6 h-6 text-cyber-primary" />
           </div>
-          <h3 class="text-lg text-white mb-2">Email</h3>
-          <a href="mailto:contacto@devsecops.com" class="text-slate-400 hover:text-cyan-400 transition-colors">
+          <h3 class="text-lg text-white mb-2 font-mono">EMAIL_ENCRYPTED</h3>
+          <a href="mailto:contacto@devsecops.com" class="text-slate-400 hover:text-cyber-primary transition-colors font-mono text-sm">
             contacto@devsecops.com
           </a>
         </div>
 
-        <div class="contact-card p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-xl hover:border-cyan-400/50 transition-all group">
-          <div class="w-12 h-12 bg-cyan-400/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyan-400/20 transition-colors">
-            <Icon name="phone" class="w-6 h-6 text-cyan-400" />
+        <div class="contact-card p-6 bg-cyber-gray/50 border border-cyber-slate rounded-lg hover:border-cyber-secondary/50 transition-all group">
+          <div class="w-12 h-12 bg-cyber-secondary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyber-secondary/20 transition-colors">
+            <Icon name="phone" class="w-6 h-6 text-cyber-secondary" />
           </div>
-          <h3 class="text-lg text-white mb-2">Teléfono</h3>
-          <a href="tel:+1234567890" class="text-slate-400 hover:text-cyan-400 transition-colors">
+          <h3 class="text-lg text-white mb-2 font-mono">VOICE_LINE</h3>
+          <a href="tel:+1234567890" class="text-slate-400 hover:text-cyber-secondary transition-colors font-mono text-sm">
             +1 (234) 567-890
           </a>
         </div>
 
-        <div class="contact-card p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-xl hover:border-cyan-400/50 transition-all group">
-          <div class="w-12 h-12 bg-cyan-400/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyan-400/20 transition-colors">
-            <Icon name="mapPin" class="w-6 h-6 text-cyan-400" />
+        <div class="contact-card p-6 bg-cyber-gray/50 border border-cyber-slate rounded-lg hover:border-cyber-accent/50 transition-all group">
+          <div class="w-12 h-12 bg-cyber-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyber-accent/20 transition-colors">
+            <Icon name="mapPin" class="w-6 h-6 text-cyber-accent" />
           </div>
-          <h3 class="text-lg text-white mb-2">Ubicación</h3>
-          <p class="text-slate-400">
+          <h3 class="text-lg text-white mb-2 font-mono">PHYSICAL_NODE</h3>
+          <p class="text-slate-400 font-mono text-sm">
             Ciudad, País<br />
-            Trabajo remoto disponible
+            Remote_Access: ENABLED
           </p>
-        </div>
-
-        <div class="p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-xl">
-          <h3 class="text-lg text-white mb-4">Redes Sociales</h3>
-          <div class="flex gap-3">
-            <a
-              href="#"
-              class="w-10 h-10 rounded-lg bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400 transition-all hover:scale-110"
-            >
-              <Icon name="github" class="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              class="w-10 h-10 rounded-lg bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400 transition-all hover:scale-110"
-            >
-              <Icon name="linkedin" class="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              class="w-10 h-10 rounded-lg bg-slate-800/50 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400 transition-all hover:scale-110"
-            >
-              <Icon name="twitter" class="w-5 h-5" />
-            </a>
-          </div>
         </div>
       </div>
 
       <div class="lg:col-span-2">
         <div class="contact-form-container relative group">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500"></div>
-          <div class="relative p-8 bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 rounded-2xl">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-cyber-primary to-cyber-secondary rounded-lg opacity-20 group-hover:opacity-50 blur transition-opacity duration-500"></div>
+          <div class="relative p-8 bg-cyber-dark border border-cyber-slate rounded-lg">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-primary to-cyber-secondary opacity-50"></div>
+            
             <form id="contact-form" class="space-y-6">
               <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label for="name" class="block text-sm text-slate-300 mb-2">Nombre</label>
+                  <label for="name" class="block text-xs font-mono text-cyber-secondary mb-2">>> INPUT_NAME</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     required
-                    class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                    placeholder="Tu nombre"
+                    class="w-full px-4 py-3 bg-cyber-gray/50 border border-cyber-slate rounded text-white placeholder-slate-600 focus:outline-none focus:border-cyber-secondary focus:ring-1 focus:ring-cyber-secondary transition-all font-mono text-sm"
+                    placeholder="_"
                   />
                 </div>
                 <div>
-                  <label for="email" class="block text-sm text-slate-300 mb-2">Email</label>
+                  <label for="email" class="block text-xs font-mono text-cyber-secondary mb-2">>> INPUT_EMAIL</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     required
-                    class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                    placeholder="tu@email.com"
+                    class="w-full px-4 py-3 bg-cyber-gray/50 border border-cyber-slate rounded text-white placeholder-slate-600 focus:outline-none focus:border-cyber-secondary focus:ring-1 focus:ring-cyber-secondary transition-all font-mono text-sm"
+                    placeholder="_"
                   />
                 </div>
               </div>
 
               <div>
-                <label for="subject" class="block text-sm text-slate-300 mb-2">Asunto</label>
+                <label for="subject" class="block text-xs font-mono text-cyber-secondary mb-2">>> INPUT_SUBJECT</label>
                 <input
                   type="text"
                   id="subject"
                   name="subject"
                   required
-                  class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                  placeholder="¿En qué puedo ayudarte?"
+                  class="w-full px-4 py-3 bg-cyber-gray/50 border border-cyber-slate rounded text-white placeholder-slate-600 focus:outline-none focus:border-cyber-secondary focus:ring-1 focus:ring-cyber-secondary transition-all font-mono text-sm"
+                  placeholder="_"
                 />
               </div>
 
               <div>
-                <label for="message" class="block text-sm text-slate-300 mb-2">Mensaje</label>
+                <label for="message" class="block text-xs font-mono text-cyber-secondary mb-2">>> INPUT_MESSAGE</label>
                 <textarea
                   id="message"
                   name="message"
                   required
                   rows="6"
-                  class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
-                  placeholder="Cuéntame sobre tu proyecto..."
+                  class="w-full px-4 py-3 bg-cyber-gray/50 border border-cyber-slate rounded text-white placeholder-slate-600 focus:outline-none focus:border-cyber-secondary focus:ring-1 focus:ring-cyber-secondary transition-all font-mono text-sm resize-none"
+                  placeholder="_"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                class="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white hover:shadow-lg hover:shadow-cyan-500/50 transition-all hover:scale-105"
+                class="w-full flex items-center justify-center gap-2 px-8 py-4 bg-cyber-secondary/10 border border-cyber-secondary text-cyber-secondary font-mono rounded hover:bg-cyber-secondary hover:text-black transition-all group/btn"
               >
-                <Icon name="send" class="w-5 h-5" />
-                Enviar Mensaje
+                <Icon name="send" class="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                TRANSMIT_DATA
               </button>
             </form>
 
-            <div id="form-message" class="hidden mt-4 p-4 rounded-lg"></div>
+            <div id="form-message" class="hidden mt-4 p-4 rounded border border-cyber-primary/50 bg-cyber-primary/10 text-cyber-primary font-mono text-sm"></div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="mt-20 text-center">
-      <div class="inline-block p-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl scroll-reveal">
-        <h3 class="text-2xl text-white mb-4">¿Necesitas consultoría en seguridad?</h3>
-        <p class="text-slate-400 mb-6 max-w-2xl">
-          Ofrezco servicios de consultoría especializada en seguridad de aplicaciones, 
-          auditorías de infraestructura y diseño de arquitecturas DevSecOps.
-        </p>
-        <a
-          href="#contacto"
-          class="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white hover:shadow-lg hover:shadow-cyan-500/50 transition-all hover:scale-105"
-        >
-          Agenda una consulta
-        </a>
       </div>
     </div>
   </div>
@@ -167,11 +128,9 @@ import Icon from './Icon.astro';
     e.preventDefault();
     
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
     
     if (formMessage) {
-      formMessage.textContent = '¡Mensaje enviado con éxito! Te responderé pronto.';
-      formMessage.className = 'mt-4 p-4 rounded-lg bg-cyan-400/10 border border-cyan-400/50 text-cyan-400';
+      formMessage.textContent = '> TRANSMISSION_SUCCESSFUL. STANDBY_FOR_RESPONSE...';
       formMessage.classList.remove('hidden');
       
       form.reset();
@@ -219,10 +178,6 @@ import Icon from './Icon.astro';
     }
   }
 
-  .contact-card:hover {
-    transform: translateY(-5px) scale(1.02);
-  }
-
   .contact-form-container {
     opacity: 0;
     animation: fadeIn 0.8s ease-out 0.3s forwards;
@@ -237,11 +192,6 @@ import Icon from './Icon.astro';
       opacity: 1;
       transform: scale(1);
     }
-  }
-
-  input:focus,
-  textarea:focus {
-    box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
   }
 </style>
 

@@ -1,40 +1,211 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Projects from '../components/Projects.astro';
-import Technologies from '../components/Technologies.astro';
-import Contact from '../components/Contact.astro';
-import Navigation from '../components/Navigation.astro';
+import InteractiveSkills from "../components/InteractiveSkills.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Portfolio - Ingeniero DevSecOps">
-  <Navigation />
-  
-  <main>
-    <section id="inicio">
-      <Hero />
-    </section>
-    
-    <section id="acerca">
-      <About />
-    </section>
-    
-    <section id="proyectos">
-      <Projects />
-    </section>
-    
-    <section id="tecnologias">
-      <Technologies />
-    </section>
+<Layout title="Porfolio de Kevin Valdez - DevSecOps">
+    <div
+        class="flex justify-center px-6 py-2 gap-4 md:gap-6 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-xs md:text-sm font-medium shadow-lg overflow-x-auto"
+    >
+        <a
+            href="#inicio"
+            class="hover:text-purple-400 transition whitespace-nowrap">Inicio</a
+        >
+        <a
+            href="#experiencia"
+            class="hover:text-purple-400 transition whitespace-nowrap"
+            >Experiencia</a
+        >
+        <a
+            href="#formacion"
+            class="hover:text-purple-400 transition whitespace-nowrap"
+            >Formación</a
+        >
+        <a
+            href="#habilidades"
+            class="hover:text-purple-400 transition whitespace-nowrap"
+            >Habilidades</a
+        >
+    </div>
 
-    <section id="contacto">
-      <Contact />
-    </section>
-  </main>
+    <main class="w-full max-w-5xl mx-auto px-4 pt-32 pb-20">
+        <section
+            id="inicio"
+            class="flex flex-col-reverse md:flex-row items-center justify-between gap-10 min-h-[60vh]"
+        >
+            <div class="flex-1 text-center md:text-left space-y-4">
+                <h1 class="text-4xl md:text-6xl font-bold">
+                    Hola, soy <span class="text-purple-400">Kevin Valdez</span>
+                </h1>
+                <div
+                    class="inline-block px-3 py-1 rounded-lg bg-purple-900/30 border border-purple-500/50 text-purple-300 text-sm font-semibold"
+                >
+                    DevSecOps & Ingeniería en Computación
+                </div>
+                <p class="text-gray-300 text-lg max-w-lg mx-auto md:mx-0">
+                    Estudiante de 7mo semestre en UABC con enfoque en Seguridad
+                    de Datos. Desarrollo soluciones de software seguro y
+                    análisis de vulnerabilidades.
+                </p>
+                <div class="flex gap-4 justify-center md:justify-start pt-4">
+                    <a
+                        href="mailto:kvnvldz7@gmail.com"
+                        class="px-6 py-2 rounded-lg bg-white text-black font-bold hover:bg-gray-200 transition"
+                        >Contáctame</a
+                    >
+                </div>
+                <div class="text-gray-400 text-sm pt-2">Ensenada, BC</div>
+            </div>
+            <div
+                class="relative w-48 h-48 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-500/20 shadow-2xl hover:scale-105 transition duration-500 bg-gradient-to-b from-purple-900/20 to-black"
+            >
+                <img
+                    src="https://res.cloudinary.com/dknkeexmk/image/upload/v1763605204/pong%C3%BCino_nm8zqv.jpg"
+                    alt="Penguin Avatar"
+                    class="object-cover w-full h-full opacity-90 hover:opacity-100 transition"
+                />
+            </div>
+        </section>
 
-  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-  </div>
+        <section id="experiencia" class="py-20">
+            <h2 class="text-3xl font-bold mb-12 flex items-center gap-3">
+                <span class="w-8 h-1 bg-purple-500 rounded-full"></span> Experiencia
+                Profesional
+            </h2>
+
+            <div
+                class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent"
+            >
+                <div
+                    class="relative flex items-center justify-between md:justify-normal group is-active"
+                >
+                    <div
+                        class="w-full md:w-[45%] bg-white/5 p-6 rounded-xl border border-white/10 hover:border-purple-500/50 transition shadow-lg"
+                    >
+                        <div
+                            class="flex items-center justify-between space-x-2 mb-1"
+                        >
+                            <h3 class="font-bold text-white">DevSecOps</h3>
+                            <time class="font-mono text-xs text-purple-400"
+                                >Ago 2025 – Presente</time
+                            >
+                        </div>
+                        <div class="text-gray-400 mb-2">
+                            CICESE | Ensenada, BC
+                        </div>
+                        <p class="text-gray-300 text-sm">
+                            Desarrollé un portal para análisis de
+                            vulnerabilidades y documentación técnica para el
+                            departamento de seguridad del CICESE.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex items-center justify-between md:justify-end group"
+                >
+                    <div
+                        class="w-full md:w-[45%] bg-white/5 p-6 rounded-xl border border-white/10 hover:border-purple-500/50 transition shadow-lg"
+                    >
+                        <div
+                            class="flex items-center justify-between space-x-2 mb-1"
+                        >
+                            <h3 class="font-bold text-white">
+                                Desarrollador Web
+                            </h3>
+                            <time class="font-mono text-xs text-gray-400"
+                                >Mar 2025 – Presente</time
+                            >
+                        </div>
+                        <div class="text-gray-400 mb-2">EXIES | Remoto</div>
+                        <p class="text-gray-300 text-sm">
+                            Diseño e implementación de módulos en Angular y C#.
+                            Coordinación remota y colaboración académica.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex items-center justify-between md:justify-normal group"
+                >
+                    <div
+                        class="w-full md:w-[45%] bg-white/5 p-6 rounded-xl border border-white/10 hover:border-purple-500/50 transition shadow-lg"
+                    >
+                        <div
+                            class="flex items-center justify-between space-x-2 mb-1"
+                        >
+                            <h3 class="font-bold text-white">
+                                Auditor Interno
+                            </h3>
+                            <time class="font-mono text-xs text-gray-400"
+                                >Ago 2023 – Dic 2023</time
+                            >
+                        </div>
+                        <div class="text-gray-400 mb-2">
+                            BANCO SANTANDER | Remoto
+                        </div>
+                        <p class="text-gray-300 text-sm">
+                            Gestión de inventario tecnológico y auditorías
+                            remotas de sucursales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="formacion" class="py-10">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <span class="w-8 h-1 bg-blue-500 rounded-full"></span> Formación
+                & Certificaciones
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div
+                    class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-500/30 transition"
+                >
+                    <h3 class="text-xl font-bold text-white mb-1">
+                        Ingeniería en Computación
+                    </h3>
+                    <p class="text-blue-400 text-sm mb-2">
+                        UABC | 2022 – Presente
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        Actualmente en 7mo semestre. Enfoque en Seguridad de
+                        Datos.
+                    </p>
+                </div>
+                <div
+                    class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-500/30 transition"
+                >
+                    <h3 class="text-xl font-bold text-white mb-1">
+                        Certificaciones
+                    </h3>
+                    <ul class="space-y-2 mt-2">
+                        <li
+                            class="flex items-start gap-2 text-sm text-gray-300"
+                        >
+                            Google Cybersecurity (Coursera, 170h)
+                        </li>
+                        <li
+                            class="flex items-start gap-2 text-sm text-gray-300"
+                        >
+                            TensorFlow Developer (DeepLearning.AI, 80h)
+                        </li>
+                        <li
+                            class="flex items-start gap-2 text-sm text-gray-300"
+                        >
+                            Admin. Pequeños Negocios (COBACH, 180h)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="py-10">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <span class="w-8 h-1 bg-green-500 rounded-full"></span> Habilidades
+                Técnicas
+            </h2>
+            <InteractiveSkills />
+        </section>
+    </main>
 </Layout>

@@ -1,23 +1,37 @@
 ---
-import '../styles/globals.css';
-
 interface Props {
-  title: string;
+	title: string;
 }
 
 const { title } = Astro.props;
+import InteractiveParticles from "../components/InteractiveParticles.astro";
 ---
 
 <!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Portfolio de Ingeniero en Seguridad de Datos y DevSecOps" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
-  </head>
-  <body class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100">
-    <slot />
-  </body>
+<html lang="es" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Portafolio de Coco" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title}</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body
+		class="bg-[#0a0a0a] text-white font-['Onest'] selection:bg-purple-500 selection:text-white"
+	>
+		<InteractiveParticles />
+		<slot />
+	</body>
 </html>
+
+<style is:global>
+	/* Ajustes visuales básicos */
+	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+</style>
