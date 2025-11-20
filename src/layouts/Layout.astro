@@ -4,7 +4,11 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import "../styles/globals.css";
 import InteractiveParticles from "../components/InteractiveParticles.astro";
+import CustomCursor from "../components/CustomCursor.astro";
+import RippleEffect from "../components/RippleEffect.astro";
+import AuroraBackground from "../components/AuroraBackground.astro";
 ---
 
 <!doctype html>
@@ -22,8 +26,70 @@ import InteractiveParticles from "../components/InteractiveParticles.astro";
 	<body
 		class="bg-[#0a0a0a] text-white font-['Onest'] selection:bg-purple-500 selection:text-white"
 	>
+		<AuroraBackground />
 		<InteractiveParticles />
+		<CustomCursor />
+		<RippleEffect />
 		<slot />
+
+		<script>
+			// Spotlight Effect
+			const cards = document.querySelectorAll(".spotlight-card");
+			cards.forEach((card) => {
+				card.addEventListener("mousemove", (e) => {
+					const rect = (card as HTMLElement).getBoundingClientRect();
+					const x = (e as MouseEvent).clientX - rect.left;
+					const y = (e as MouseEvent).clientY - rect.top;
+					(card as HTMLElement).style.setProperty(
+						"--mouse-x",
+						`${x}px`,
+					);
+					(card as HTMLElement).style.setProperty(
+						"--mouse-y",
+						`${y}px`,
+					);
+				});
+			});
+
+			// Scroll Reveal
+			const observerOptions = {
+				root: null,
+				rootMargin: "0px",
+				threshold: 0.1,
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("active");
+						observer.unobserve(entry.target);
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll(".reveal").forEach((el) => {
+				observer.observe(el);
+			});
+
+			// Magnetic Buttons
+			const magneticBtns = document.querySelectorAll(".magnetic-btn");
+			magneticBtns.forEach((btn) => {
+				btn.addEventListener("mousemove", (e) => {
+					const rect = (btn as HTMLElement).getBoundingClientRect();
+					const x =
+						(e as MouseEvent).clientX - rect.left - rect.width / 2;
+					const y =
+						(e as MouseEvent).clientY - rect.top - rect.height / 2;
+
+					(btn as HTMLElement).style.transform =
+						`translate(${x * 0.2}px, ${y * 0.2}px)`;
+				});
+
+				btn.addEventListener("mouseleave", () => {
+					(btn as HTMLElement).style.transform = "translate(0, 0)";
+				});
+			});
+		</script>
 	</body>
 </html>
 

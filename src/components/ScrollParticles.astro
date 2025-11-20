@@ -1,0 +1,112 @@
+---
+// Scroll-reactive particles that create a wave effect
+---
+
+<canvas id="scroll-particles" class="scroll-particles-canvas"></canvas>
+
+<style>
+    .scroll-particles-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.3;
+    }
+</style>
+
+<script>
+    const canvas = document.getElementById(
+        "scroll-particles",
+    ) as HTMLCanvasElement;
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    class ScrollParticle {
+        x: number;
+        y: number;
+        baseY: number;
+        size: number;
+        color: string;
+        speed: number;
+
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.baseY = this.y;
+            this.size = Math.random() * 3 + 1;
+            const colors = [
+                "rgba(168, 85, 247, 0.6)",
+                "rgba(236, 72, 153, 0.6)",
+                "rgba(59, 130, 246, 0.6)",
+            ];
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+            this.speed = Math.random() * 0.5 + 0.2;
+        }
+
+        update(scrollOffset: number) {
+            // Wave effect based on scroll
+            const wave =
+                Math.sin(
+                    (this.x / canvas.width) * Math.PI * 2 + scrollOffset * 0.01,
+                ) * 30;
+            this.y = this.baseY + wave;
+
+            // Wrap around
+            if (this.y > canvas.height + 50) {
+                this.y = -50;
+                this.baseY = this.y;
+            }
+            if (this.y < -50) {
+                this.y = canvas.height + 50;
+                this.baseY = this.y;
+            }
+        }
+
+        draw() {
+            if (!ctx) return;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = this.color;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+        }
+    }
+
+    const particles: ScrollParticle[] = [];
+    const particleCount = 50;
+
+    for (let i = 0; i < particleCount; i++) {
+        particles.push(new ScrollParticle());
+    }
+
+    let scrollOffset = 0;
+    window.addEventListener("scroll", () => {
+        scrollOffset = window.pageYOffset;
+    });
+
+    function animate() {
+        if (!ctx) return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach((particle) => {
+            particle.update(scrollOffset);
+            particle.draw();
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+</script>

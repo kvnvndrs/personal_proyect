@@ -1,51 +1,251 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Parallax Layers */
+.parallax-layer {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
-@layer base {
-  * {
-    @apply border-cyber-slate;
+/* Glitch Effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
   }
 
-  body {
-    @apply bg-cyber-dark text-slate-200 font-sans overflow-x-hidden;
+  20% {
+    transform: translate(-2px, 2px);
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-mono;
+  40% {
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
   }
 }
 
-@layer utilities {
-  .text-glow {
-    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text:hover {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.glitch-text:hover::before {
+  animation: glitch-before 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: #a855f7;
+  z-index: -1;
+}
+
+.glitch-text:hover::after {
+  animation: glitch-after 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: #ec4899;
+  z-index: -2;
+}
+
+@keyframes glitch-before {
+
+  0%,
+  100% {
+    transform: translate(0);
+    opacity: 0;
   }
-  
-  .border-glow {
-    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
-  }
 
-  .bg-grid-pattern {
-    background-image: linear-gradient(to right, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
+  50% {
+    transform: translate(-3px, 3px);
+    opacity: 0.7;
   }
 }
 
+@keyframes glitch-after {
 
-::-webkit-scrollbar {
-  width: 8px;
+  0%,
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translate(3px, -3px);
+    opacity: 0.7;
+  }
 }
 
-::-webkit-scrollbar-track {
-  @apply bg-cyber-dark;
+/* Floating Animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  @apply bg-cyber-slate rounded-full hover:bg-cyber-secondary/50 transition-colors;
+.float-animation {
+  animation: float 6s ease-in-out infinite;
 }
 
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
 
-::selection {
-  @apply bg-cyber-secondary/30 text-cyber-secondary;
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Pulse Glow */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(168, 85, 247, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Morphing Border */
+@keyframes morph-border {
+
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+.morph-border {
+  animation: morph-border 8s ease-in-out infinite;
+}
+
+/* Text Gradient Animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg,
+      #a855f7,
+      #ec4899,
+      #3b82f6,
+      #a855f7);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 5s ease infinite;
+}
+
+/* Micro-interaction: Scale on hover */
+.micro-scale {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.micro-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Stagger Animation */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: stagger-in 0.6s ease forwards;
+}
+
+@keyframes stagger-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stagger-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stagger-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stagger-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.stagger-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Neon Glow on Hover */
+.neon-hover {
+  transition: all 0.3s ease;
+}
+
+.neon-hover:hover {
+  text-shadow:
+    0 0 10px rgba(168, 85, 247, 0.8),
+    0 0 20px rgba(168, 85, 247, 0.6),
+    0 0 30px rgba(168, 85, 247, 0.4);
+  color: #fff;
 }

@@ -1,0 +1,84 @@
+---
+// Ripple effect on click
+---
+
+<canvas id="ripple-canvas" class="ripple-canvas"></canvas>
+
+<style>
+    .ripple-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9996;
+    }
+</style>
+
+<script>
+    const canvas = document.getElementById(
+        "ripple-canvas",
+    ) as HTMLCanvasElement;
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const ripples: {
+        x: number;
+        y: number;
+        radius: number;
+        maxRadius: number;
+        opacity: number;
+    }[] = [];
+
+    document.addEventListener("click", (e) => {
+        ripples.push({
+            x: e.clientX,
+            y: e.clientY,
+            radius: 0,
+            maxRadius: 100,
+            opacity: 1,
+        });
+    });
+
+    function animate() {
+        if (!ctx) return;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = ripples.length - 1; i >= 0; i--) {
+            const ripple = ripples[i];
+
+            ripple.radius += 3;
+            ripple.opacity -= 0.015;
+
+            if (ripple.opacity <= 0) {
+                ripples.splice(i, 1);
+                continue;
+            }
+
+            ctx.beginPath();
+            ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(168, 85, 247, ${ripple.opacity})`;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Inner ripple
+            ctx.beginPath();
+            ctx.arc(ripple.x, ripple.y, ripple.radius * 0.7, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(236, 72, 153, ${ripple.opacity * 0.5})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+        }
+
+        requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+</script>

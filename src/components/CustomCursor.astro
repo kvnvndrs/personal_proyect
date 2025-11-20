@@ -1,0 +1,163 @@
+---
+// Custom Cursor with Trail Effect
+---
+
+<div id="cursor-dot" class="cursor-dot"></div>
+<div id="cursor-outline" class="cursor-outline"></div>
+<canvas id="cursor-trail" class="cursor-trail-canvas"></canvas>
+
+<style>
+    .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background: linear-gradient(135deg, #a855f7, #ec4899);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition:
+            width 0.2s,
+            height 0.2s;
+        mix-blend-mode: difference;
+    }
+
+    .cursor-outline {
+        width: 32px;
+        height: 32px;
+        border: 2px solid rgba(168, 85, 247, 0.5);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9998;
+        transform: translate(-50%, -50%);
+        transition:
+            width 0.3s,
+            height 0.3s,
+            border-color 0.3s;
+    }
+
+    .cursor-dot.hover {
+        width: 16px;
+        height: 16px;
+    }
+
+    .cursor-outline.hover {
+        width: 48px;
+        height: 48px;
+        border-color: rgba(168, 85, 247, 0.8);
+    }
+
+    .cursor-trail-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9997;
+    }
+</style>
+
+<script>
+    const cursorDot = document.getElementById("cursor-dot") as HTMLElement;
+    const cursorOutline = document.getElementById(
+        "cursor-outline",
+    ) as HTMLElement;
+    const trailCanvas = document.getElementById(
+        "cursor-trail",
+    ) as HTMLCanvasElement;
+    const ctx = trailCanvas.getContext("2d");
+
+    trailCanvas.width = window.innerWidth;
+    trailCanvas.height = window.innerHeight;
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let outlineX = 0;
+    let outlineY = 0;
+
+    const trail: { x: number; y: number; life: number }[] = [];
+
+    window.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        cursorDot.style.left = `${mouseX}px`;
+        cursorDot.style.top = `${mouseY}px`;
+
+        // Add trail particle
+        trail.push({ x: mouseX, y: mouseY, life: 1 });
+    });
+
+    // Smooth outline follow
+    function animateOutline() {
+        outlineX += (mouseX - outlineX) * 0.15;
+        outlineY += (mouseY - outlineY) * 0.15;
+
+        cursorOutline.style.left = `${outlineX}px`;
+        cursorOutline.style.top = `${outlineY}px`;
+
+        requestAnimationFrame(animateOutline);
+    }
+    animateOutline();
+
+    // Trail animation
+    function animateTrail() {
+        if (!ctx) return;
+
+        ctx.clearRect(0, 0, trailCanvas.width, trailCanvas.height);
+
+        for (let i = trail.length - 1; i >= 0; i--) {
+            const particle = trail[i];
+            particle.life -= 0.02;
+
+            if (particle.life <= 0) {
+                trail.splice(i, 1);
+                continue;
+            }
+
+            const gradient = ctx.createRadialGradient(
+                particle.x,
+                particle.y,
+                0,
+                particle.x,
+                particle.y,
+                10,
+            );
+            gradient.addColorStop(
+                0,
+                `rgba(168, 85, 247, ${particle.life * 0.3})`,
+            );
+            gradient.addColorStop(1, "rgba(168, 85, 247, 0)");
+
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(particle.x, particle.y, 10 * particle.life, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        requestAnimationFrame(animateTrail);
+    }
+    animateTrail();
+
+    // Hover effects
+    const interactiveElements = document.querySelectorAll(
+        "a, button, .experience-card, .skill-card, .filter-btn",
+    );
+    interactiveElements.forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+            cursorDot.classList.add("hover");
+            cursorOutline.classList.add("hover");
+        });
+        el.addEventListener("mouseleave", () => {
+            cursorDot.classList.remove("hover");
+            cursorOutline.classList.remove("hover");
+        });
+    });
+
+    window.addEventListener("resize", () => {
+        trailCanvas.width = window.innerWidth;
+        trailCanvas.height = window.innerHeight;
+    });
+</script>

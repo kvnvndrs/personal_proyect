@@ -1,5 +1,15 @@
 ---
-const skillCategories = [
+// Define the type for color keys
+type ColorKey = "blue" | "purple" | "green" | "gray" | "white";
+
+type SkillCategory = {
+  id: string;
+  name: string;
+  color: ColorKey;
+  skills: Array<{ name: string; icon: string }>;
+};
+
+const skillCategories: SkillCategory[] = [
   {
     id: "lenguajes",
     name: "Lenguajes",
@@ -20,7 +30,7 @@ const skillCategories = [
       { name: "HTML5", icon: "html5" },
       { name: "Tailwind", icon: "tailwindcss" },
       { name: ".NET", icon: "dotnet" },
-      { name: "C#", icon: "C" },
+      { name: "C#", icon: "csharp" },
       { name: "JavaScript", icon: "javascript" },
       { name: "PHP", icon: "php" },
       { name: "Astro", icon: "astro" },
@@ -61,6 +71,14 @@ const skillCategories = [
     ],
   },
 ];
+
+const colorMap: Record<ColorKey, string> = {
+  blue: "rgba(59, 130, 246, 0.25)",
+  purple: "rgba(168, 85, 247, 0.25)",
+  green: "rgba(34, 197, 94, 0.25)",
+  gray: "rgba(156, 163, 175, 0.25)",
+  white: "rgba(255, 255, 255, 0.15)",
+};
 ---
 
 <div class="interactive-skills-container">
@@ -89,9 +107,10 @@ const skillCategories = [
       skillCategories.flatMap((cat) =>
         cat.skills.map((skill) => (
           <div
-            class={`skill-card group relative p-4 rounded-xl border border-white/10 bg-black/40 backdrop-blur-sm hover:scale-105 transition-all duration-300 cursor-default overflow-hidden`}
+            class={`skill-card group relative p-4 rounded-xl border border-white/10 bg-black/40 backdrop-blur-sm hover:scale-105 transition-all duration-300 cursor-default overflow-hidden spotlight-card`}
             data-category={cat.id}
             data-color={cat.color}
+            style={`--spotlight-color: ${colorMap[cat.color] || colorMap.purple}`}
           >
             <div
               class={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-${cat.color}-500`}
